@@ -4,9 +4,43 @@
   .products_card_content {
     padding: 20px;
     &_img {
-      img {
+      position: relative;
+      overflow: hidden;
+      img{
+        transition: 0.5s all ease;
+      }
+      button{
+        min-width: 139px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #f5f5f5;
+        font-size: 15px;
+        line-height: 1.466667;
+        color: #333;
+        position: absolute;
+        bottom: -50px;
+        left: 60px;
+        border: none;
+        opacity: 0;
+        transition: 0.5s all ease;
+        transform: translateY(-50%);
+        &:hover{
+          background-color: #222;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+      &:hover button{
+        opacity: 1;
+        bottom: 70px;
+        transform: translateY(0%);
+      }
+      &:hover img{
+        transform: scale(1.2);
+        opacity: 0.8;
       }
     }
+
     &_text {
       display: flex;
       justify-content: space-between;

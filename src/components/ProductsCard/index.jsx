@@ -8,6 +8,7 @@ const ProductsCard = ({ x, id, img, name, price }) => {
         <div className="products_card_content">
           <div className="products_card_content_img">
             <img src={img} alt="" />
+            <button>Quick View</button>
           </div>
           <div className="products_card_content_text">
             <div className="products_card_content_text_left">

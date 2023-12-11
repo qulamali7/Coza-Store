@@ -1,26 +1,32 @@
-.slider_text {
-  .text_name {
-    font-size: 28px;
-    line-height: 1.2857;
-    color: #333;
-  }
-  h1 {
-    font-size: 60px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #333;
-  }
-  button {
-    background-color: #717fe0;
-    color: #ffff;
-    border: none;
-    border-radius: 23px;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 0px 15px;
-    line-height: 1.466667;
-    text-transform: uppercase;
-    min-width: 161px;
-    height: 46px;
+.carousel-caption-bottom{
+  bottom: 200px;
+  left: -350px;
+  color: #333;
+  box-shadow: none;
+  .slider_text {
+    .text_name {
+      font-size: 28px;
+      line-height: 1.2857;
+      margin-bottom: 20px; 
+    }
+    h1 {
+      font-size: 60px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #717fe0;
+      color: #ffff;
+      border: none;
+      border-radius: 23px;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 0px 15px;
+      line-height: 1.466667;
+      text-transform: uppercase;
+      min-width: 161px;
+      height: 46px;
+    }
   }
 }

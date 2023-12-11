@@ -12,6 +12,9 @@ const Products = () => {
           </div>
           <ProductsFilter />
           <ProductsCards />
+          <div className="load_products">
+            <button>Load More</button>
+          </div>
         </div>
       </section>
     </>

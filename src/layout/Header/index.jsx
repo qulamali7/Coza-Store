@@ -1,10 +1,21 @@
 import React from "react";
 import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
+  const [navbar, setNavbar] = useState(false)
+    const stickyNavbar =()=>{
+        if (window.scrollY>=30) {
+            setNavbar(true)
+        }
+        else{
+            setNavbar(false)
+        }
+    }
+    window.addEventListener("scroll",stickyNavbar)
   return (
     <>
-      <header id="header">
+      <header id={navbar ? "sticky" : "header"}>
         <div className="header_container">
           <div className="header_top">
             <div className="header_top_container">
@@ -33,11 +44,6 @@ const Header = () => {
                 <ul>
                   <NavLink className="home-menu">
                     <li>Home</li>
-                    <ul className="sub-menu">
-                      <li>HomePage1</li>
-                      <li>HomePage2</li>
-                      <li>HomePage3</li>
-                    </ul>
                   </NavLink>
                   <NavLink>
                     <li>Shop</li>
