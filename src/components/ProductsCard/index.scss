@@ -1,0 +1,28 @@
+.products_card {
+  max-width: 25%;
+  border: 1px solid #e5e5e5;
+  .products_card_content {
+    padding: 20px;
+    &_img {
+      img {
+      }
+    }
+    &_text {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      &_left {
+        p {
+          color: #999;
+          font-size: 14px;
+        }
+        span {
+          color: #666;
+          font-size: 14px;
+        }
+      }
+      &_icon {
+      }
+    }
+  }
+}
