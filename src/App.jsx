@@ -2,6 +2,7 @@ import "./index.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/detail/:id" element={<Detail />}/>
           </Route>
         </Routes>
       </BrowserRouter>

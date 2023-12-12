@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.scss";
 import { useState, useEffect } from "react";
 import ProductsCard from "../ProductsCard";
+import { SearchContext } from "../../context/SearchContext";
+import { SelectContext } from "../../context/SelectContext";
 const ProductsCards = () => {
+  const { input } = useContext(SearchContext);
+  const { select } = useContext(SelectContext);
   const [data, setData] = useState([]);
   async function GetFetch() {
     try {
@@ -22,15 +26,18 @@ const ProductsCards = () => {
   return (
     <>
       <div className="products_cards">
-        {data.map((x) => (
-          <ProductsCard
-            x={x}
-            id={x.id}
-            img={x.images}
-            name={x.name}
-            price={x.price}
-          />
-        ))}
+        {data
+          .filter((x) => x.name.toLowerCase().includes(input.toLowerCase()))
+          .filter((x) => x.model.toString().includes(select))
+          .map((x) => (
+            <ProductsCard
+              x={x}
+              id={x.id}
+              img={x.images}
+              name={x.name}
+              price={x.price}
+            />
+          ))}
       </div>
     </>
   );

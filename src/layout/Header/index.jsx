@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { SideBarContext } from "../../context/SideBarContext";
+import BasketSideBar from "../../components/BasketSideBar";
 const Header = () => {
-  const [navbar, setNavbar] = useState(false)
-    const stickyNavbar =()=>{
-        if (window.scrollY>=30) {
-            setNavbar(true)
-        }
-        else{
-            setNavbar(false)
-        }
+  const [navbar, setNavbar] = useState(false);
+  const stickyNavbar = () => {
+    if (window.scrollY >= 5) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
     }
-    window.addEventListener("scroll",stickyNavbar)
+  };
+  window.addEventListener("scroll", stickyNavbar);
+  const {ToggleSidebar} = useContext(SideBarContext);
   return (
     <>
+    <BasketSideBar/>
       <header id={navbar ? "sticky" : "header"}>
         <div className="header_container">
           <div className="header_top">
@@ -34,7 +37,7 @@ const Header = () => {
           </div>
           <div className="header_main">
             <nav>
-              <Link className="header-img">
+              <Link to={"/"} className="header-img">
                 <img
                   src="https://preview.colorlib.com/theme/cozastore/images/icons/logo-01.png.webp"
                   alt=""
@@ -42,9 +45,9 @@ const Header = () => {
               </Link>
               <div className="header_main_list">
                 <ul>
-                  <NavLink className="home-menu">
-                    <li>Home</li>
-                  </NavLink>
+                  <li>
+                    <NavLink to={"/"}>Home</NavLink>
+                  </li>
                   <NavLink>
                     <li>Shop</li>
                   </NavLink>
@@ -67,7 +70,10 @@ const Header = () => {
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div>
-                  <i className="fa-solid fa-cart-shopping"></i>
+                  <i
+                    className="fa-solid fa-cart-shopping"
+                    onClick={ToggleSidebar}
+                  ></i>
                 </div>
                 <div>
                   <i className="fa-regular fa-heart"></i>

@@ -41,14 +41,16 @@
         border-bottom: 2px solid #fff;
         transform: translateY(250%);
         transition: 0.5s all ease;
+        transition: transform 400ms, padding 600ms;
+        opacity: 0;
+        visibility: hidden;
         p {
           color: #fff;
           font-size: 15px;
           line-height: 1.466667;
           text-transform: uppercase;
           font-weight: 600;
-          opacity: 0;
-          visibility: hidden;
+          
         }
       }
     }
@@ -62,6 +64,7 @@
   }
   &:hover .card_content_text_bottom {
     transform: translateY(0%);
+    padding-bottom: 16px;
     opacity: 1;
     visibility: visible;
   }
