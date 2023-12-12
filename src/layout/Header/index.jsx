@@ -4,7 +4,9 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { SideBarContext } from "../../context/SideBarContext";
 import BasketSideBar from "../../components/BasketSideBar";
+import { BasketContext } from "../../context/BasketContext";
 const Header = () => {
+  const {basket} = useContext(BasketContext)
   const [navbar, setNavbar] = useState(false);
   const stickyNavbar = () => {
     if (window.scrollY >= 5) {
@@ -14,10 +16,10 @@ const Header = () => {
     }
   };
   window.addEventListener("scroll", stickyNavbar);
-  const {ToggleSidebar} = useContext(SideBarContext);
+  const { ToggleSidebar } = useContext(SideBarContext);
   return (
     <>
-    <BasketSideBar/>
+      <BasketSideBar />
       <header id={navbar ? "sticky" : "header"}>
         <div className="header_container">
           <div className="header_top">
@@ -48,21 +50,31 @@ const Header = () => {
                   <li>
                     <NavLink to={"/"}>Home</NavLink>
                   </li>
-                  <NavLink>
-                    <li>Shop</li>
-                  </NavLink>
-                  <NavLink>
-                    <li>Features</li>
-                  </NavLink>
-                  <NavLink>
-                    <li>Blog</li>
-                  </NavLink>
-                  <NavLink>
-                    <li>About</li>
-                  </NavLink>
-                  <NavLink>
-                    <li>Contact</li>
-                  </NavLink>
+                  <li>
+                    <NavLink>
+                      Shop
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink>
+                      Features <sup>HOT</sup>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink>
+                      Blog
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink>
+                      About
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink>
+                      Contact
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
               <div className="header_main_icon">
@@ -73,10 +85,10 @@ const Header = () => {
                   <i
                     className="fa-solid fa-cart-shopping"
                     onClick={ToggleSidebar}
-                  ></i>
+                  ><sup>{basket.length ? basket.length : 0}</sup></i>
                 </div>
                 <div>
-                  <i className="fa-regular fa-heart"></i>
+                  <i className="fa-regular fa-heart"><sup>1</sup></i>
                 </div>
               </div>
             </nav>
