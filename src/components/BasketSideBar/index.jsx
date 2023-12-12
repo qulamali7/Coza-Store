@@ -11,7 +11,7 @@ const BasketSideBar = () => {
       <div className="basket_side">
         <div
           className={`basket_side_container ${
-            sidebar == true ? "container_active " : ""
+            sidebar == true ? "basketcontainer_active  " : ""
           }`}
         >
           <div className="basket_side_context">

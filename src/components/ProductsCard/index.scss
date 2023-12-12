@@ -55,7 +55,14 @@
           font-size: 14px;
         }
       }
-      &_icon {
+      
+    }
+    &_icon {
+      i{
+        cursor: pointer;
+      }
+      .fa-solid{
+        color: red;
       }
     }
   }

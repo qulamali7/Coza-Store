@@ -5,8 +5,12 @@ import { useState } from "react";
 import { SideBarContext } from "../../context/SideBarContext";
 import BasketSideBar from "../../components/BasketSideBar";
 import { BasketContext } from "../../context/BasketContext";
+import { WishlistContext } from "../../context/WishlistContext";
+import WishlistSideBar from "../../components/WishlistSideBar";
+import { WishlistSideContext } from "../../context/WishlistSideContext";
 const Header = () => {
-  const {basket} = useContext(BasketContext)
+  const { basket } = useContext(BasketContext)
+  const { wishlist } = useContext(WishlistContext)
   const [navbar, setNavbar] = useState(false);
   const stickyNavbar = () => {
     if (window.scrollY >= 5) {
@@ -15,12 +19,18 @@ const Header = () => {
       setNavbar(false);
     }
   };
+  // const ToggleSidebar = () => {
+  //   sidebar === true ? setSidebar(false) : setSidebar(true);
+  // };
   window.addEventListener("scroll", stickyNavbar);
   const { ToggleSidebar } = useContext(SideBarContext);
+  const { ToggleWishlistsidebar } = useContext(WishlistSideContext)
   return (
     <>
       <BasketSideBar />
-      <header id={navbar ? "sticky" : "header"}>
+      <WishlistSideBar />
+      <header className={`header ${navbar === true ? "sticky " : ""
+        }`}>
         <div className="header_container">
           <div className="header_top">
             <div className="header_top_container">
@@ -88,7 +98,7 @@ const Header = () => {
                   ><sup>{basket.length ? basket.length : 0}</sup></i>
                 </div>
                 <div>
-                  <i className="fa-regular fa-heart"><sup>1</sup></i>
+                  <i className="fa-regular fa-heart" onClick={ToggleWishlistsidebar}><sup>{wishlist.length ? wishlist.length : 0}</sup></i>
                 </div>
               </div>
             </nav>

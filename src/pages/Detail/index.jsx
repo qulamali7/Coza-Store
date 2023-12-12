@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import "./index.scss";
 import { useParams } from "react-router-dom";
 import { BasketContext } from "../../context/BasketContext";
-import BasketSideBar from "../../components/BasketSideBar";
+import { WishlistContext } from "../../context/WishlistContext";
 const Detail = () => {
-    const { addBasket } =
+  const { addBasket } =
     useContext(BasketContext);
+  const { addWishlist } = useContext(WishlistContext)
   let { id } = useParams();
   const [detail, setDetail] = useState([]);
   useEffect(() => {
@@ -24,24 +25,24 @@ const Detail = () => {
   }
   return (
     <>
-    <section id="detail">
+      <section id="detail">
         <div className="detail_container">
-            <div className="detail_context">
-                <div className="detail_img">
-                    <img src={detail.images} alt="" />
-                </div>
-                <div className="detail_text">
-                    <h3>{detail.name}</h3>
-                    <p>{detail.description?.text}</p>
-                    <span>{detail.price}$</span>
-                    <div className="buttons">
-                    <button onClick={()=>addBasket(detail)}>Add Basket</button>
-                    <button>Add Wishlist</button>
-                    </div>
-                </div>
+          <div className="detail_context">
+            <div className="detail_img">
+              <img src={detail.images} alt="" />
             </div>
+            <div className="detail_text">
+              <h3>{detail.name}</h3>
+              <p>{detail.description?.text}</p>
+              <span>{detail.price}$</span>
+              <div className="buttons">
+                <button onClick={() => addBasket(detail)}>Add Basket</button>
+                <button onClick={() => addWishlist(detail)}>Add Wishlist</button>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
     </>
   );
 };
