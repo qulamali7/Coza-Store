@@ -2,19 +2,32 @@ import React, { useContext } from "react";
 import "./index.scss";
 import { SearchContext } from "../../context/SearchContext";
 import { SelectContext } from "../../context/SelectContext";
+import { FilterContext } from "../../context/FilterContext";
 const ProductsFilter = () => {
   const { input, HandleSearch } = useContext(SearchContext);
   const { select, handleSelect } = useContext(SelectContext);
+  const { setFilterdata } = useContext(FilterContext);
   return (
     <>
       <div className="products_filter">
         <div className="products_filter_left">
-          <button>All Products</button>
-          <button>Women</button>
-          <button>Men</button>
-          <button>Bag</button>
-          <button>Shoes</button>
-          <button>Watches</button>
+          <button onClick={() => {
+              setFilterdata("All");
+            }} >All</button>
+          <button
+            onClick={() => {
+              setFilterdata("Womens");
+            }}
+          >
+            Women
+          </button>
+          <button
+            onClick={() => {
+              setFilterdata("Mens");
+            }}
+          >
+            Men
+          </button>
         </div>
         <div className="products_filter_right">
           <div className="products_filter_right_select">

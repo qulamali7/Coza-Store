@@ -18,10 +18,7 @@ const Header = () => {
     } else {
       setNavbar(false);
     }
-  };
-  // const ToggleSidebar = () => {
-  //   sidebar === true ? setSidebar(false) : setSidebar(true);
-  // };
+  }
   window.addEventListener("scroll", stickyNavbar);
   const { ToggleSidebar } = useContext(SideBarContext);
   const { ToggleWishlistsidebar } = useContext(WishlistSideContext)
@@ -76,7 +73,7 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink>
+                    <NavLink to={"/about"}>
                       About
                     </NavLink>
                   </li>
@@ -98,7 +95,7 @@ const Header = () => {
                   ><sup>{basket.length ? basket.length : 0}</sup></i>
                 </div>
                 <div>
-                  <i className="fa-regular fa-heart" onClick={ToggleWishlistsidebar}><sup>{wishlist.length ? wishlist.length : 0}</sup></i>
+                  <i className="fa-solid fa-heart" onClick={ToggleWishlistsidebar}><sup>{wishlist.length ? wishlist.length : 0}</sup></i>
                 </div>
               </div>
             </nav>

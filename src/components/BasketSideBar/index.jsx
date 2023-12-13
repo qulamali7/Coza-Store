@@ -8,10 +8,11 @@ const BasketSideBar = () => {
   const { sidebar, ToggleSidebar } = useContext(SideBarContext);
   return (
     <>
+      <div className={sidebar === true ? "opacitydiv" : ""}></div>
       <div className="basket_side">
         <div
           className={`basket_side_container ${
-            sidebar == true ? "basketcontainer_active  " : ""
+            sidebar === true ? "basketcontainer_active  " : ""
           }`}
         >
           <div className="basket_side_context">
@@ -19,8 +20,8 @@ const BasketSideBar = () => {
               <h4>YOUR CART</h4>
               <i className="fa-solid fa-x" onClick={ToggleSidebar}></i>
             </div>
-            {basket.map((x) => (
-              <div className="basket_cards">
+            <div className="basket_cards">
+              {basket.map((x) => (
                 <div className="basket_card">
                   <div className="basket_img">
                     <img src={x.images} alt="" />
@@ -45,8 +46,8 @@ const BasketSideBar = () => {
                     <button onClick={() => removeBasket(x)}>x</button>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
