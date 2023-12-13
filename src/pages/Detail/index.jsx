@@ -3,6 +3,7 @@ import "./index.scss";
 import { useParams } from "react-router-dom";
 import { BasketContext } from "../../context/BasketContext";
 import { WishlistContext } from "../../context/WishlistContext";
+import { Helmet } from "react-helmet-async";
 const Detail = () => {
   const { addBasket } =
     useContext(BasketContext);
@@ -25,6 +26,11 @@ const Detail = () => {
   }
   return (
     <>
+    
+    <Helmet>
+        <title>Product</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <section id="detail">
         <div className="detail_container">
           <div className="detail_context">

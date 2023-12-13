@@ -1,11 +1,15 @@
 import React from 'react'
 import "./index.scss";
+import { Helmet } from "react-helmet-async";
+import PageTitle from '../../components/PageTitle';
 const About = () => {
   return (
     <>
-    <section className='about_header'>
-        <h2>About</h2>
-    </section>
+    <Helmet>
+        <title>About</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+    <PageTitle title={"About"}/>
     <section id='our'>
       <div className='our_container'>
         <div className='our_story'>
