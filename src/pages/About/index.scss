@@ -6,14 +6,14 @@
     max-width: 1200px;
     margin: auto;
     .our_story {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        // gap: 20px;
-      &_text { 
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 140px;
+      &_text {
         max-width: 65%;
         &_content {
-            padding-right: 85px;
+          padding-right: 85px;
           h3 {
             font-size: 25px;
             line-height: 1.2;
@@ -30,24 +30,96 @@
           }
         }
       }
-      &_img{
+      &_img {
         max-width: 33.3%;
-        &_content{
-            position: relative;
-            z-index: 1;
-            .img_border{
-                position: absolute;
-                z-index: -1;
-                width: 100%;
-                height: 100%;
-                border: 3px solid #ccc;
-                bottom: -21px;
-                left: -21px;
-
+        &_content {
+          position: relative;
+          z-index: 0;
+          .img_border {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #ccc;
+            bottom: -21px;
+            left: -21px;
+          }
+          .hover_img {
+            overflow: hidden;
+            img {
+              transition: 0.5s all ease;
             }
-            .hover_img{
-
+            &:hover img {
+              transform: scale(1.2);
             }
+          }
+        }
+      }
+    }
+    .our_mission {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      &_text {
+        max-width: 65%;
+        &_content {
+          padding-left: 85px;
+          h3 {
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: bold;
+            color: #333;
+            padding-bottom: 16px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 1.7857;
+            color: #888;
+            font-weight: 300;
+            padding-bottom: 26px;
+          }
+          .quote {
+            border-left: 3px solid #e6e6e6;
+            margin-top: 22px;
+            padding-left: 29px;
+            padding-bottom: 9px;
+            p {
+              font-size: 15px;
+              line-height: 1.666667;
+              color: #888;
+              font-weight: italic;
+            }
+            span {
+              font-size: 13px;
+              line-height: 1.6923;
+              color: #555;
+            }
+          }
+        }
+      }
+      &_img {
+        max-width: 33.3%;
+        &_content {
+          position: relative;
+          z-index: 0;
+          .img_border {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #ccc;
+            bottom: -21px;
+            right: -21px;
+          }
+          .hover_img {
+            overflow: hidden;
+            img {
+              transition: 0.5s all ease;
+            }
+            &:hover img {
+              transform: scale(1.2);
+            }
+          }
         }
       }
     }

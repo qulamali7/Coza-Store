@@ -1,121 +1,182 @@
 #contact {
-    background-color: #fff;
-    padding: 116px 0px;
+  background-color: #fff;
+  padding: 116px 0px;
 
-    .contact_container {
-        max-width: 1200px;
-        margin: auto;
+  .contact_container {
+    max-width: 1200px;
+    margin: auto;
 
-        .contact_context {
+    .contact_context {
+      display: flex;
+
+      .contact_email {
+        width: 50%;
+        border: 1px solid #e6e6e6;
+        padding: 55px 70px 70px 70px;
+        form {
+          h4 {
+            font-size: 24px;
+            line-height: 1.5;
+            color: #333;
+            text-align: center;
+            padding-bottom: 30px;
+          }
+          .form_input {
             display: flex;
-
-            .formik {
-                width: 50%;
-                border: 1px solid #e6e6e6;
+            align-items: center;
+            border: 1px solid #e6e6e6;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            i{
+                margin-left: 25px;
             }
-
-            .contact_address {
-                width: 50%;
-                border: 1px solid #e6e6e6;
-                padding: 50px 93px;
-
-                .address {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 20px;
-                    padding-bottom: 42px;
-
-                    i {
-                        color: #222;
-      
-                        font-size: 18px;
-                    }
-
-                    div {
-                        h4 {
-                            font-size: 18px;
-                            line-height: 1.222222;
-                            color: #333;
-                        }
-
-                        p {
-                            max-width: 245px;
-                            font-size: 15px;
-                            line-height: 1.666667;
-                            color: #888;
-
-                        }
-                    }
-                }
-
-                .talk {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 20px;
-                    padding-bottom: 42px;
-
-                    i {
-                        color: #222;
-                        font-size: 18px;
-                    }
-
-                    div {
-                        h4 {
-                            font-size: 18px;
-                            line-height: 1.222222;
-                            color: #333;
-                            
-                        }
-
-                        p {
-                            max-width: 245px;
-                            font-size: 15px;
-                            line-height: 1.666667;
-                            color: #717fe0;
-                            padding-top: 18px;
-
-                        }
-                    }
-                }
-
-                .support {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 20px;
-                    padding-bottom: 42px;
-
-                    i {
-                        color: #222;
-                        font-size: 18px;
-                    }
-
-                    div {
-                        h4 {
-                            font-size: 18px;
-                            line-height: 1.222222;
-                            color: #333;
-                        }
-
-                        p {
-                            max-width: 245px;
-                            font-size: 15px;
-                            line-height: 1.666667;
-                            color: #717fe0;
-                            padding-top: 18px;
-                        }
-                    }
-                }
+            input {
+              outline: none;
+              border: none;
+              font-size: 13px;
+              line-height: 1.6923;
+              width: 100%;
+              height: 50px;
+              color: #333;
+              padding-right: 30px;
+              padding-left: 20px;
             }
+          }
+          .form_textarea {
+            margin-bottom: 30px;
+            border: 1px solid #e6e6e6;
+            border-radius: 2px;
+            textarea {
+              padding: 25px 28px;
+              outline: none;
+              border: none;
+              overflow: auto;
+              resize: vertical;
+              width: 100%;
+              min-height: 199px;
+            }
+          }
+          button{
+            background-color: #222;
+            width: 100%;
+        height: 46px;
+        font-size: 15px;
+        line-height: 1.466667;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        border-radius: 23px;
+        border: none;
+        transition: 0.5s all ease;
+        &:hover{
+            border-color: #717fe0;
+    background-color: #717fe0;
+    color: #fff;
+    cursor: pointer;
         }
+          }
+        }
+      }
+
+      .contact_address {
+        width: 50%;
+        border: 1px solid #e6e6e6;
+        padding: 50px 93px;
+
+        .address {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding-bottom: 42px;
+
+          i {
+            color: #222;
+
+            font-size: 18px;
+          }
+
+          div {
+            h4 {
+              font-size: 18px;
+              line-height: 1.222222;
+              color: #333;
+            }
+
+            p {
+              max-width: 245px;
+              font-size: 15px;
+              line-height: 1.666667;
+              color: #888;
+            }
+          }
+        }
+
+        .talk {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding-bottom: 42px;
+
+          i {
+            color: #222;
+            font-size: 18px;
+          }
+
+          div {
+            h4 {
+              font-size: 18px;
+              line-height: 1.222222;
+              color: #333;
+            }
+
+            p {
+              max-width: 245px;
+              font-size: 15px;
+              line-height: 1.666667;
+              color: #717fe0;
+              padding-top: 18px;
+            }
+          }
+        }
+
+        .support {
+          display: flex;
+          align-items: flex-start;
+          gap: 20px;
+          padding-bottom: 42px;
+
+          i {
+            color: #222;
+            font-size: 18px;
+          }
+
+          div {
+            h4 {
+              font-size: 18px;
+              line-height: 1.222222;
+              color: #333;
+            }
+
+            p {
+              max-width: 245px;
+              font-size: 15px;
+              line-height: 1.666667;
+              color: #717fe0;
+              padding-top: 18px;
+            }
+          }
+        }
+      }
+      
     }
+  }
 }
 
 .map {
-    height: 450px;
+  height: 450px;
 
-    iframe {
-        border: none;
-        height: 100%;
-
-    }
+  iframe {
+    border: none;
+    height: 100%;
+  }
 }
