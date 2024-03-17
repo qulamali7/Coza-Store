@@ -58,11 +58,11 @@ const Header = () => {
                     <NavLink to={"/"}>Home</NavLink>
                   </li>
                   <li>
-                    <NavLink>
+                    <NavLink to={"/shop"}>
                       Shop
                     </NavLink>
                   </li>
-                  <li>
+                  {/* <li>
                     <NavLink>
                       Features <sup>HOT</sup>
                     </NavLink>
@@ -71,7 +71,7 @@ const Header = () => {
                     <NavLink>
                       Blog
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to={"/about"}>
                       About
